@@ -1,0 +1,24 @@
+<Alloy>
+	<Window id="winFeedback" class="container" title="Feedback">
+		<Label id="submitResult"></Label>
+		<ScrollView id="svForm" onClick="svForm_onClick">
+			<View class="field-row">
+				<Label class="field-label">Name:</Label>
+				<TextField id="tfName" class="field-textfield" onClick="textField_onClick"></TextField>	
+			</View>
+			<View class="field-row">
+				<Label class="field-label">Email:</Label>
+				<TextField id="tfEmail" class="field-textfield" onClick="textField_onClick"></TextField>	
+			</View>
+			<View class="field-row">
+				<Label class="field-label">Feedback:</Label>
+				<TextArea id="taFeedback" class="field-textarea" onClick="textField_onClick"></TextArea>
+				<!-- <View class="view-textbox-container">
+					<TextArea id="taFeedback" class="field-textarea"></TextArea>	
+				</View> -->
+			</View>
+			<Button id="btnSubmit" onTouchstart="btn_onTouchstart" onTouchEnd="btn_onTouchend"
+				onClick="btnSubmit_onClick" title="Submit"></Button>
+		</ScrollView>
+	</Window>
+</Alloy>

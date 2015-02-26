@@ -1,0 +1,6 @@
+<Alloy>
+	<Window class="container" id="winHome">
+		 <Drawer id="drawer" module="com.tripvi.drawerlayout" />
+		<!-- <Require type="widget" src="com.alcoapps.drawermenu" id="drawermenu"/> -->
+	</Window>
+</Alloy>

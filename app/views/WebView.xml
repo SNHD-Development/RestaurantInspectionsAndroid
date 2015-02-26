@@ -1,0 +1,5 @@
+<Alloy>
+	<Window id="winWebView" modal="true">
+        <WebView id="wvMain" />
+    </Window>
+</Alloy>

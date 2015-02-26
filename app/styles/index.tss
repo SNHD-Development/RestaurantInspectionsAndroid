@@ -1,0 +1,14 @@
+
+// "[Window]":{
+	// orientationModes: [Titanium.UI.PORTRAIT, Titanium.UI.UPSIDE_PORTRAIT]
+// }
+
+".container": {
+	backgroundColor:Alloy.CFG.AppBackground
+}
+
+"#drawer":{
+	leftDrawerWidth: "260",
+    width: Ti.UI.FILL,
+    height: Ti.UI.FILL
+}

@@ -1,0 +1,9 @@
+
+"#winWebView": {
+	backgroundColor: Alloy.CFG.AppBackground,
+	layout: 'vertical'
+}
+
+"#wvMain":{
+	borderRadius: 0.1
+}

@@ -1,0 +1,88 @@
+
+".container" : {
+  backgroundColor: Alloy.CFG.AppBackground,
+}
+
+"ScrollView":{
+	backgroundColor: '#222',
+	layout: 'vertical',
+	top: 0,
+	showHorizontalScrollIndicator: false
+}
+
+"#tfEmail":{
+	keyboardType: Titanium.UI.KEYBOARD_EMAIL
+}
+
+".field-label":{
+	font: {
+		fontSize: 13
+	},
+	color: "white",
+	width: 80,
+	height: 40
+}
+
+".field-textfield":{
+	font: {
+		fontSize: 13
+	},
+	width: '92%',
+	height: 40,
+	color: "white",
+	backgroundColor: "#555",
+	returnKeyType: Titanium.UI.RETURNKEY_DONE
+}
+
+".field-textfield[formFactor=tablet]":{
+	width: '95%',
+}
+
+".field-textarea[formFactor=tablet]":{
+	width: '95%',
+}
+
+".field-textarea":{
+	font: {
+		fontSize: 13
+	},
+	width: '92%',
+	height: 120,
+	color: "white",
+	backgroundColor: "#555",
+	returnKeyType: Titanium.UI.RETURNKEY_DONE
+}
+
+"#btnSubmit":{
+	top: 30,
+	height: 40,
+	width: 250,
+	color: 'white',
+	font:{
+		fontSize: 15
+	},
+	backgroundGradient:{
+		type:'linear',
+		colors:[{color:"#05B31D",position:0.0},{color:"#03A319",position:1.0}]
+	}
+}
+
+".field-row":{
+	height: Titanium.UI.SIZE,
+	layout: 'horizontal',
+	top: 15,
+	width: '100%',
+	left: 15
+}
+
+"#submitResult":{
+	height: 100,
+	width: 100,
+	zIndex: 2,
+	textAlign: 'center',
+	opacity: 0,
+	color: 'white',
+	borderWidth: 3,
+	borderColor: 'white',
+	font: { fontSize: 18, fontWeight: 'bold' },
+}
