@@ -66,21 +66,19 @@
                 <!-- Replace "PASTE YOUR GOOGLE MAPS API KEY HERE" with the Google API key you obtained -->
                 <meta-data
                     android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyB-bgnVeu9B_xie3Wrc9LHG5I0kES_gmTc"/>
-            
-            	<activity android:name="org.appcelerator.titanium.TiActivity"
-					android:configChanges="keyboardHidden" android:screenOrientation="portrait" />
-				<activity android:name="org.appcelerator.titanium.TiTranslucentActivity"
-					android:configChanges="keyboardHidden" android:screenOrientation="portrait"
-					android:theme="@style/Theme.MyTheme" />
-				<activity android:name="org.appcelerator.titanium.TiModalActivity"
-					android:configChanges="keyboardHidden" android:screenOrientation="portrait"
-					android:theme="@style/Theme.MyTheme" />
-				<activity android:name="ti.modules.titanium.ui.TiTabActivity"
-					android:configChanges="keyboardHidden" android:screenOrientation="portrait" />
-				<activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity" />
-		 
-				<service android:name="org.appcelerator.titanium.analytics.TiAnalyticsService"
-					android:exported="false" android:screenOrientation="portrait" />
+                <activity android:configChanges="keyboardHidden"
+                    android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="portrait"/>
+                <activity android:configChanges="keyboardHidden"
+                    android:name="org.appcelerator.titanium.TiTranslucentActivity"
+                    android:screenOrientation="portrait" android:theme="@style/Theme.MyTheme"/>
+                <activity android:configChanges="keyboardHidden"
+                    android:name="org.appcelerator.titanium.TiModalActivity"
+                    android:screenOrientation="portrait" android:theme="@style/Theme.MyTheme"/>
+                <activity android:configChanges="keyboardHidden"
+                    android:name="ti.modules.titanium.ui.TiTabActivity" android:screenOrientation="portrait"/>
+                <activity android:name="ti.modules.titanium.ui.android.TiPreferencesActivity"/>
+                <service android:exported="false"
+                    android:name="org.appcelerator.titanium.analytics.TiAnalyticsService" android:screenOrientation="portrait"/>
             </application>
         </manifest>
     </android>
@@ -95,6 +93,7 @@
     <modules>
         <module platform="android">ti.map</module>
         <module platform="android">com.tripvi.drawerlayout</module>
+        <module platform="android">analytics.google</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>

@@ -1,8 +1,8 @@
 <Alloy>
 	<View class="container" id="winLeft">
 		<ImageView id="ivLogo" onClick="ivLogo_onClick"></ImageView>
-    	<Label id="lblAppTitleHeading">Food Inspections</Label>
-    	<Label id="lblAppleTitleSubHeading">Las Vegas</Label>
+    	<Label id="lblAppTitleHeading">Restaurant Grades</Label>
+    	<Label id="lblAppleTitleSubHeading">Southern Nevada</Label>
     	<View height="20"></View>
     	<View class = "vLeftWinMenuItem" viewName="Nearby" id="vMenuItemNearby" onClick="menuItem_onClick"
     		onTouchstart="menuItem_TouchStart" onTouchend="menuItem_TouchEnd" >

@@ -21,13 +21,22 @@ $.winHome.addEventListener('open',function(){
 });
 
 function tweet(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "TweetClicked",
+	});
 	var twitterAppUrl = "twitter://post?message=@foodapp Nice App :)";
-	var twitterWebUrl = "https://twitter.com/intent/tweet?status=@foodapp Nice App :)";
+	var twitterWebUrl = "https://twitter.com/intent/tweet?status=@SNHDinfo #restaurantgradesnv ";
 	Titanium.Platform.openURL(twitterWebUrl);
 }
 
 $.winHome.addEventListener('close', function() {
     $.destroy();
+});
+
+$.drawer.addEventListener('draweropen', function() {
+	console.log('hi');
+    Ti.App.fireEvent("hideSearchKeyboard");
 });
 
 function menuItemClicked(e){

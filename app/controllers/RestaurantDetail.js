@@ -5,6 +5,10 @@ var inspections = Alloy.Collections.inspections;
 var Map = require('ti.map');
 var serviceAgent = require('serviceAgent');
 
+Alloy.Globals.Tracker.trackScreen({
+  screenName: "Restaurant Detail"
+});
+
 function transformFunction(model){
 	var m = model.toJSON();
 	var violationsStr = '';
@@ -35,12 +39,6 @@ function closeWin(){
 
 function restaurantDetail_onOpen(){
 	Alloy.Globals.Loader.show();
-	$.winRestaurantDetail.right = -1 * util.getPlatformWidthDip();
-	$.tvInspections.left = -1 * util.getPlatformWidthDip();
-	$.tvInspections.animate({curve:Ti.UI.ANIMATION_CURVE_EASE_OUT,left:0,duration:300});
-	$.winRestaurantDetail.animate({curve:Ti.UI.ANIMATION_CURVE_EASE_OUT,right:0,duration:300}, function(){
-		Alloy.Globals.Loader.hide();
-	});
 	$.winRestaurantDetail.animate({curve:Ti.UI.ANIMATION_CURVE_EASE_OUT,opacity:1,duration:600},
 		function(){
 			Alloy.Globals.Loader.hide();
@@ -109,6 +107,10 @@ function getBookmark(){
 }
 
 function vBookmark_onClick(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "BookmarkedRestaurant",
+	});
 	var bookmark = getBookmark();
 	if (bookmark == null){
 		var bookmark = Alloy.createModel('bookmark',{
@@ -125,6 +127,10 @@ function vBookmark_onClick(){
 }
 
 function vFeedback_onClick(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "FeedbackClicked",
+	});
 	var view = Alloy.createController('Feedback',{
 		restaurant: restaurantDetail
 	}).getView();
@@ -164,6 +170,10 @@ function addMap(restaurant){
 }
 
 function vDirections_onClick(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "DirectionsClicked",
+	});
 	Alloy.Globals.Loader.show();
 	util.getLatLon(function(err, loc){
 		Alloy.Globals.Loader.hide();
@@ -222,7 +232,7 @@ function loadNextRestaurant(){
 		view.open();
 		setTimeout(function(){
 			$.winRestaurantDetail.close();
-		}, 600);
+		}, 500);
 	});
 }
 
@@ -248,6 +258,10 @@ function loadPrevRestaurant(){
 }
 
 function trInspection_onSwipe(e){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "SwipedOnRestaurantDetail",
+	});
 	if (e.direction == "left"){
 		loadNextRestaurant();
 	}else if (e.direction == "right"){
@@ -256,6 +270,10 @@ function trInspection_onSwipe(e){
 }
 
 function vYelp_onClick(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "YelpClicked",
+	});
 	Alloy.Globals.Loader.show();
 	var name = removeNumberAndSlashFromRestaurantName(restaurantDetail.name);
 	var address = restaurantDetail.address + ' ' + restaurantDetail.zipCode;

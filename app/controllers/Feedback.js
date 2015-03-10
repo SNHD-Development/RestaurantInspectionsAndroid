@@ -2,6 +2,10 @@ var serviceAgent = require('serviceAgent');
 var util = require('util');
 var args = arguments[0] || {};
 
+Alloy.Globals.Tracker.trackScreen({
+  screenName: "Feedback"
+});
+
 function btn_onTouchstart(e){
 	e.source.backgroundGradient = {
 		type:'linear',
@@ -33,6 +37,10 @@ function textField_onClick(e){
 }
 
 function btnSubmit_onClick(){
+	Alloy.Globals.Tracker.trackEvent({
+	  category: "UserActions",
+	  action: "FeedbackSubmitted",
+	});
 	unhideKeyboard();
 	Alloy.Globals.Loader.show();
 	serviceAgent.submitFeedback({
@@ -50,7 +58,7 @@ function btnSubmit_onClick(){
 			$.submitResult.animate({curve:Ti.UI.ANIMATION_CURVE_EASE_IN_OUT,opacity:1.0,duration:300},function(e){
 				setTimeout(function(){
 					$.submitResult.opacity = 0;
-					$.Feedback.close();
+					$.winFeedback.close();
 				}, 2000);
 			});
 		}else{

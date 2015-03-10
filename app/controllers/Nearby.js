@@ -4,6 +4,10 @@ var restaurants = Alloy.Collections.restaurants;
 restaurants.trigger('change');
 var args = arguments[0] || {};
 
+Alloy.Globals.Tracker.trackScreen({
+  screenName: "Nearby"
+});
+
 function refreshRestaurantSummary(data,append){
 	if (_.isNull(data)){
 		return;
@@ -152,7 +156,9 @@ function init(){
 			$.vSummaryView.animate({curve:Ti.UI.ANIMATION_CURVE_EASE_IN,top:70,duration:200});
 		}
 	});
-	
+	Ti.App.addEventListener('hideSearchKeyboard', function(){
+		$.sbRestaurantSearch.blur();
+	});
 	$.lvSummary.addEventListener('marker',loadNearbyRestaurants);
 }
 

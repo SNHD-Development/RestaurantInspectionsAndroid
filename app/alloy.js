@@ -13,6 +13,9 @@
 var util = require('util');
 Alloy.Globals.Map = require('ti.map');
 
+var GA = require("analytics.google");
+Alloy.Globals.Tracker = GA.getTracker("UA-55158890-2");
+
 Alloy.Collections.restaurants = new Backbone.Collection();
 Alloy.Collections.inspections = new Backbone.Collection();
 Alloy.Globals.Loader = Alloy.createWidget('com.caffeinalab.titanium.loader', {
