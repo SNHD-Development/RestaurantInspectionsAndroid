@@ -25,7 +25,7 @@ function tweet(){
 	  category: "UserActions",
 	  action: "TweetClicked",
 	});
-	var twitterAppUrl = "twitter://post?message=@foodapp Nice App :)";
+	var twitterAppUrl = "twitter://post?message=@SNHDinfo #restaurantgradesnv ";
 	var twitterWebUrl = "https://twitter.com/intent/tweet?status=@SNHDinfo #restaurantgradesnv ";
 	Titanium.Platform.openURL(twitterWebUrl);
 }

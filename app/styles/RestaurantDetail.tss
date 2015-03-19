@@ -44,6 +44,13 @@
 	font: { fontSize: 14, fontWeight: 'bold' },
 }
 
+"#numDemerits":{
+	color: '#353535',
+	left: 10,
+	top: 35,
+	font: { fontSize: 13 },
+}
+
 "#btnBack":{
 	backgroundColor: 'transparent',
 	backgroundImage: '/images/back.png',
@@ -61,7 +68,7 @@
 	top: 180,
 	separatorColor: "transparent",
 	allowsSelection: false,
-	minRowHeight: 80
+	minRowHeight: 85
 }
 
 ".trInspection":{
@@ -71,7 +78,7 @@
 }
 
 ".lblViolations":{
-	top: 40,
+	top: 55,
 	left: 20,
 	color: '#888',
 	font: {fontSize: 13},

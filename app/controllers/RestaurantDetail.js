@@ -58,7 +58,7 @@ function init(){
     	var inspection = new Backbone.Model({
     		inspectedDate: (new Date(d.inspectionTime)).toLocaleDateString(),
     		grade: d.grade,
-    		demerits:  (_.isNull(demerits) || demerits == 0) ? 0 : "-" + d.inspectionDemerits,
+    		demerits:  (_.isNull(demerits) || demerits == 0) ? 'No demerits' : d.inspectionDemerits + ' Demerits',
     		gradeColor: util.getGradeColor(d.grade),
     		violations: d.violations
     	});
@@ -258,6 +258,9 @@ function loadPrevRestaurant(){
 }
 
 function trInspection_onSwipe(e){
+	if (!args.hasOwnProperty('pidList'))
+		return;
+		
 	Alloy.Globals.Tracker.trackEvent({
 	  category: "UserActions",
 	  action: "SwipedOnRestaurantDetail",

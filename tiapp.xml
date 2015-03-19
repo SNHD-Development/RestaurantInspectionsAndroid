@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>org.cchd.ri</id>
-    <name>Restaurant Grades in Southern NV</name>
-    <version>1.0</version>
-    <publisher>Tharindu</publisher>
+    <name>Restaurant Grades Southern NV</name>
+    <version>1.01</version>
+    <publisher>Southern Nevada Health District</publisher>
     <url>http://</url>
-    <description>undefined</description>
-    <copyright>2014 by Tharindu</copyright>
+    <description>See current and historical restaurant inspection grades from the Southern Nevada Health District. Find information for all restaurants in your area or search for restaurant grade cards by name.  View Yelp ratings for restaurants.</description>
+    <copyright>2014 by Southern Nevada Health District</copyright>
     <icon>appicon2.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
@@ -43,7 +43,7 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest>
+        <manifest android:versionCode="101" android:versionName="1.0.1" >
             <!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->
             <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
             <!-- Allows the API to download data from Google Map servers -->
