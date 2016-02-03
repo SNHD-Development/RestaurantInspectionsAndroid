@@ -4,7 +4,7 @@
 
 "#sbRestaurantSearch":{
 	barColor: 'transparent',
-	width: '100%'	
+	width: '100%',
 }
 
 "#lblNoResults":{

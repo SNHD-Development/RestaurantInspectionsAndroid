@@ -2,7 +2,7 @@
 <ti:app xmlns:ti="http://ti.appcelerator.org">
     <id>org.cchd.ri</id>
     <name>Restaurant Grades Southern NV</name>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <publisher>Southern Nevada Health District</publisher>
     <url>http://</url>
     <description>See current and historical restaurant inspection grades from the Southern Nevada Health District. Find information for all restaurants in your area or search for restaurant grade cards by name.  View Yelp ratings for restaurants.</description>
@@ -11,7 +11,7 @@
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
     <analytics>true</analytics>
-    <guid>6b5478c6-1402-4fd0-a0c2-2becbb195f10</guid>
+    <guid>1d9aba8d-8839-4b0a-9888-e2662b58c332</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
         <plist>
@@ -43,9 +43,9 @@
         </plist>
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
-        <manifest android:versionCode="104" android:versionName="1.0.4">
+        <manifest android:versionCode="105" android:versionName="1.0.5">
             <!-- Need to specify at least API level 11 for Titanium SDK 3.2.x and prior -->
-            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+            <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
             <!-- Allows the API to download data from Google Map servers -->
             <uses-permission android:name="android.permission.INTERNET"/>
             <!-- Allows the API to cache data -->
@@ -93,7 +93,7 @@
     <modules>
         <module platform="android">ti.map</module>
         <module platform="android">com.tripvi.drawerlayout</module>
-        <module platform="android">analytics.google</module>
+        <module platform="android" version="3.1.0">analytics.google</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -102,8 +102,9 @@
         <target device="iphone">false</target>
         <target device="mobileweb">false</target>
     </deployment-targets>
-    <sdk-version>3.5.0.GA</sdk-version>
+    <sdk-version>3.5.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
+    <property name="appc-app-id" type="string">562fd01dbc404f16587aa2b4</property>
 </ti:app>

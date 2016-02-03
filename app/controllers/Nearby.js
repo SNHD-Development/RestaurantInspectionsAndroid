@@ -39,7 +39,7 @@ function getRestaurantPidList(){
 }
 
 function lvSummary_onItemclick(e){
-	console.log(e.source);
+	$.lvSummary.touchEnabled = false;
 	var restaurant = restaurants.at(e.itemIndex);
 	Alloy.Globals.Loader.show();
 	serviceAgent.loadRestaurantDetails(restaurant.get('permitNumber'), function(err, data){
@@ -53,6 +53,7 @@ function lvSummary_onItemclick(e){
 			currIdx: e.itemIndex
 		}).getView();
 		view.open();
+		$.lvSummary.touchEnabled = true;
 	});
 }
 function searchHandler(e){
@@ -60,8 +61,10 @@ function searchHandler(e){
 	var searchTerm = $.sbRestaurantSearch.getValue();
 	$.sbRestaurantSearch.blur();
 	if (searchTerm == '' || searchTerm == null){
+		Alloy.Globals.Loader.hide();
 		return;
 	}
+	console.log('foo2');
 	$.lvSummary.removeEventListener('marker', loadNearbyRestaurants);
 	util.getLatLon(function(err, loc){
 		serviceAgent.loadRestaurantsByName(searchTerm,loc.lat, loc.lon,0,30,function(err, data){
@@ -75,9 +78,9 @@ function searchHandler(e){
 }
 
 function sbRestaurantSearch_onChange(){
-	if (_.isNull($.sbRestaurantSearch.getValue()) || $.sbRestaurantSearch.getValue() == ''){
-		$.sbRestaurantSearch.blur();
-	}
+	// if (_.isNull($.sbRestaurantSearch.getValue()) || $.sbRestaurantSearch.getValue() == ''){
+		// $.sbRestaurantSearch.blur();
+	// }
 }
 
 function loadNearbyRestaurants(){
@@ -122,6 +125,7 @@ function getState(addrComponents){
 }
 
 function init(){
+	$.sbRestaurantSearch.setSoftKeyboardOnFocus(Titanium.UI.Android.SOFT_KEYBOARD_SHOW_ON_FOCUS);
 	restaurants.reset([]);
 	if (!Ti.App.Properties.hasProperty('disclaimerViewed')){
 		$.lblDisclaimer.visible = true;
